@@ -14,7 +14,7 @@ class CustomerController extends Controller
     {
         // $customers = Customer::all();
         // return response()->json($customers);
-        $customers = Customer::all();
+        $customers = Customer::paginate(10);
         return view('customers', ['customers' => $customers]);
     }
 

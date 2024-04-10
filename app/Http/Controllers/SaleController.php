@@ -12,7 +12,7 @@ class SaleController extends Controller
      */
     public function index()
     {
-        $sales = Sale::all();
+        $sales = Sale::paginate(10);
         return view('sales', ['sales' => $sales]);
     }
 
