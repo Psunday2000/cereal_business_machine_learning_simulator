@@ -16,9 +16,34 @@
                         <canvas id="customerAgeDistro" class="embed-responsive-item"></canvas>
                     </div>
                 </div>
-                <div class="col-12 text-center">
+                <div class="col">
                         <div class="embed-responsive embed-responsive-16by9">
                             <canvas id="customerStateChart" class="embed-responsive-item"></canvas>
+                        </div>
+                </div>                                                        
+                <div class="col">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <canvas id="customerGenderChart" class="embed-responsive-item"></canvas>
+                        </div>
+                </div>                             
+                <div class="col">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <canvas id="customerFeedbackChart" class="embed-responsive-item"></canvas>
+                        </div>
+                </div>                             
+                <div class="col">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <canvas id="customerHealthChart" class="embed-responsive-item"></canvas>
+                        </div>
+                </div>                             
+                <div class="col">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <canvas id="stockYearLineChart" class="embed-responsive-item"></canvas>
+                        </div>
+                </div>                             
+                <div class="col">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <canvas id="stockSalesBarChart" class="embed-responsive-item"></canvas>
                         </div>
                 </div>                             
             </div>
@@ -30,5 +55,10 @@
     const productNames = @json($productNames);
     const customerAges = @json($customerAges);
     const customerStates = @json($customerStates);
+    const customerGender = @json($customerGender);
+    const customerFeedback = @json($customerFeedback);
+    const customerHealthImprovement = @json($customerHealthImprovement);
+    const chartDataQuantitySold = @json($chartDataQuantitySold);
+    const chartDataQuantityProduced = @json($chartDataQuantityProduced);
 </script>
 @endsection

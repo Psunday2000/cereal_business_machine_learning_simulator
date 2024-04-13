@@ -45,16 +45,68 @@ class HomeController extends Controller
     }
     public function charts()
     {
+        // Fetch Product Columns
         $productPrices = Product::pluck('price')->toArray();
         $productNames = Product::pluck('name')->toArray();
+
+        // Fetch Customer Columns
         $customerAges = Customer::pluck('age')->toArray();
         $customerStates = Customer::pluck('state')->toArray();
-        // $customerGender = Customer::pluck('gender')->toArray();
-        // $customerFeedback = Customer::pluck('feedback')->toArray();
-        // $customerHealthImprovement = Customer::pluck('health_improvement')->toArray();
+        $customerGender = Customer::pluck('gender')->toArray();
+        $customerFeedback = Customer::pluck('feedback')->toArray();
+        $customerHealthImprovement = Customer::pluck('health_improvement')->toArray();
+        
+        // Function to fetch and process data
+    function fetchAndProcessData($quantityField)
+    {
+        // Fetch the data
+        $data = Stock::join('products', 'stocks.product_id', '=', 'products.id')
+            ->select('products.name as product_name', 'stocks.year', "stocks.$quantityField")
+            ->orderBy('stocks.year')
+            ->get();
 
-        return view('charts', compact('productPrices', 'productNames', 'customerAges', 'customerStates'));
-        // return view('charts', compact('productPrices', 'productNames', 'customerAges', 'customerState', 'customerGender', 'customerFeedback', 'customerHealthImprovement'));
+        // Group the data by year
+        $groupedData = [];
+        foreach ($data as $item) {
+            $year = $item->year;
+            $productName = $item->product_name;
+            $quantity = $item->$quantityField;
+
+            if (!isset($groupedData[$year])) {
+                $groupedData[$year] = [];
+            }
+
+            $groupedData[$year][$productName] = $quantity;
+        }
+
+        // Prepare the chart data
+        $chartData = [
+            'labels' => array_keys($groupedData),
+            'datasets' => [],
+        ];
+
+        foreach ($groupedData[key($groupedData)] as $productName => $_) {
+            $dataset = [
+                'label' => $productName,
+                'data' => [],
+            ];
+
+            foreach ($groupedData as $yearData) {
+                $dataset['data'][] = isset($yearData[$productName]) ? $yearData[$productName] : 0;
+            }
+
+            $chartData['datasets'][] = $dataset;
+        }
+
+        return $chartData;
+    }
+
+        $chartDataQuantitySold = fetchAndProcessData('quantity_sold');
+
+        // Usage for quantity_produced
+        $chartDataQuantityProduced = fetchAndProcessData('quantity_produced');
+
+        return view('charts', compact('productPrices', 'productNames', 'customerAges', 'customerStates', 'customerGender', 'customerFeedback', 'customerHealthImprovement', 'chartDataQuantitySold', 'chartDataQuantityProduced'));
     }
     public function analytics()
     {
