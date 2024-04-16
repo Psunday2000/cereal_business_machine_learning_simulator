@@ -8,7 +8,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'CBMLS') }}</title>
-    <link rel="icon" href="asset{{('images/corn.png')}}" type="image/png">
+    <link rel="icon" href="{{asset('images/corn.png')}}" type="image/png">
 
 
     {{-- <!-- Fonts -->

@@ -179,7 +179,7 @@
 
           <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
             <li>
-                <a href="/home" class="nav-link{{ request()->is('home') ? ' active text-secondary' : ' text-white' }}">
+                <a href="/" class="nav-link{{ request()->is('home') ? ' active text-secondary' : ' text-white' }}">
                     <i class="fas fa-home"></i>
                     Home
                 </a>
@@ -190,7 +190,7 @@
                     Charts
                 </a>
             </li>
-            <li>
+            {{-- <li>
                 <a href="/graphs" class="nav-link{{ request()->is('graphs') ? ' active text-secondary' : ' text-white' }}">
                     <i class="fas fa-chart-bar"></i>
                     Graphs
@@ -201,7 +201,7 @@
                     <i class="fas fa-chart-bar"></i>
                     Analytics
                 </a>
-            </li>
+            </li> --}}
         </ul>
         
         </div>

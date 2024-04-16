@@ -7,6 +7,12 @@
         </div>
         <div class="card-body">
             <h5 class="card-title">Customers</h5>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a class="text-decoration-none text-dark" href="/home">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Customers</li>
+                </ol>
+            </nav>
             <div class="table-responsive">
                 <table class="table table-bordered table-striped" id="customers-table">
                     <thead>

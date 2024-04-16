@@ -4,7 +4,6 @@ import Chart from 'chart.js/auto';
 Chart.defaults.font.family = "'Montserrat', sans-serif";
 Chart.defaults.font.style = 'normal';
 Chart.defaults.font.weight = 'normal';
-// Chart.defaults.font.lineHeight = 1.2;
 
 // Product Price Chart
 const ctx = document.getElementById('productPricesChart').getContext('2d');
@@ -312,7 +311,6 @@ new Chart(ctxy, {
   }
 });
 
-// Stock Year Bar Chart
 const ctxs = document.getElementById('stockSalesBarChart').getContext('2d');
 
 new Chart(ctxs, {
@@ -340,3 +338,85 @@ new Chart(ctxs, {
   }
 });
 
+const ctxbs = document.getElementById('salesByStateChart').getContext('2d');
+
+new Chart(ctxbs, {
+    type: 'bar',
+    data: {
+        labels: Object.keys(salesDataByState),
+        datasets: [{
+            label: 'Total Sales Amount',
+            data: Object.values(salesDataByState),
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.5)',
+                'rgba(54, 162, 235, 0.5)',
+                'rgba(255, 206, 86, 0.5)',
+                'rgba(75, 192, 192, 0.5)',
+                'rgba(153, 102, 255, 0.5)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        plugins: {
+            title: {
+                display: true,
+                text: 'Total Sales Amount by State (Top 5)',
+                font: {
+                    size: 16,
+                },
+                padding: {
+                    top: 10,
+                    bottom: 20
+                }
+            }
+        },
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+
+
+const ctxsa = document.getElementById('salesByAgeGroupChart').getContext('2d');
+
+    new Chart(ctxsa, {
+        type: 'bar',
+        data: {
+            labels: Object.keys(ageGroupSales),
+            datasets: [{
+                label: 'Number of Sales',
+                data: Object.values(ageGroupSales),
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.5)',
+                    'rgba(54, 162, 235, 0.5)',
+                    'rgba(255, 206, 86, 0.5)',
+                    'rgba(75, 192, 192, 0.5)',
+                    'rgba(153, 102, 255, 0.5)',
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'Number of Sales by Age Group',
+                    font: {
+                        size: 16,
+                    },
+                    padding: {
+                        top: 10,
+                        bottom: 20
+                    }
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });

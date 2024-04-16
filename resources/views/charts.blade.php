@@ -46,6 +46,16 @@
                             <canvas id="stockSalesBarChart" class="embed-responsive-item"></canvas>
                         </div>
                 </div>                             
+                <div class="col">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <canvas id="salesByStateChart" class="embed-responsive-item"></canvas>
+                        </div>
+                </div>                             
+                <div class="col">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <canvas id="salesByAgeGroupChart" class="embed-responsive-item"></canvas>
+                        </div>
+                </div>                                                        
             </div>
         </div>
     </div>
@@ -60,5 +70,16 @@
     const customerHealthImprovement = @json($customerHealthImprovement);
     const chartDataQuantitySold = @json($chartDataQuantitySold);
     const chartDataQuantityProduced = @json($chartDataQuantityProduced);
+    const salesDataByState = @json($salesDataByState);
+    const ageGroupSales = @json($ageGroupSales);
+
+    function reloadOnResize() {
+    window.addEventListener('resize', function() {
+        location.reload();
+        });
+    }
+
+    // Call the function to reload on resize
+    reloadOnResize();
 </script>
 @endsection

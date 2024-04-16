@@ -2,54 +2,17 @@
 
 body {
     font-family: "Montserrat", sans-serif !important;
-    background-image: url('/public/images/background.jpg');
-    background-size:cover;
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-}
-
-.circle {
-    height: 100px;
-    width: 100px;
-    border-radius: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
-.circle i {
-    font-size: 3rem;
-    margin-bottom: 0.5rem;
+    // background-image: url('/public/images/background.jpg');
+    // background-size:cover;
+    // background-position: center;
+    // background-attachment: fixed;
+    // background-repeat: no-repeat;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(15,121,9,1) 35%, rgba(201,242,178,1) 100%);
 }
 
 
-.feature-icon {
-    width: 4rem;
-    height: 4rem;
-    border-radius: .75rem;
-  }
-  
-  .icon-square {
-    width: 3rem;
-    height: 3rem;
-    border-radius: .75rem;
-  }
-  
-  .text-shadow-1 { text-shadow: 0 .125rem .25rem rgba(0, 0, 0, .25); }
-  .text-shadow-2 { text-shadow: 0 .25rem .5rem rgba(0, 0, 0, .25); }
-  .text-shadow-3 { text-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .25); }
-  
-  .card-cover {
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-  }
-  
-  .feature-icon-small {
-    width: 3rem;
-    height: 3rem;
-  }
-  
+.btn-primary{
+  background-color: rgba(15,121,9,1) !important;
+  border-color: rgba(201,242,178,1) !important;
+}
