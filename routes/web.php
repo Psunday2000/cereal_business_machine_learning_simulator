@@ -10,8 +10,9 @@ use App\Http\Controllers\StockController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\HomeController;
 
-
-Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/', function () {
+    return view('welcome');
+});
 
 Route::get('/customers', [CustomerController::class, 'index']);
 Route::get('/products', [ProductController::class, 'index']);

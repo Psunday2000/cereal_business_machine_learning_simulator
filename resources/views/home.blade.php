@@ -10,9 +10,9 @@
                         Home
                     </div>
                     <div class="card-body">
-                      <h5 class="card-title">Cereal Business Machine Learning Simulator</h5>
-                      <p class="card-text">This project simulates the use of machine learning in data analysis and predictions for a cereal business.</p>
-                      <a href="/" class="btn btn-primary">Happy Viewing!</a>        
+                      <h5 class="card-title">Cereal Business Data Presentation</h5>
+                      <p class="card-text">This project simulates the use of  data analysis for predictions in a cereal business.</p>
+                      <a href="/home" class="btn btn-primary">Happy Viewing!</a>        
                         <div class="row row-cols-1 row-cols-md-2 g-4 py-5">
                             {{-- Products Card Start --}}
                             <div class="col">

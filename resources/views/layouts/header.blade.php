@@ -179,7 +179,7 @@
 
           <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
             <li>
-                <a href="/" class="nav-link{{ request()->is('home') ? ' active text-secondary' : ' text-white' }}">
+                <a href="/home" class="nav-link{{ request()->is('home') ? ' active text-secondary' : ' text-white' }}">
                     <i class="fas fa-home"></i>
                     Home
                 </a>
